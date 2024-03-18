@@ -6,9 +6,18 @@ const mongoose = require("mongoose");
 const router = require('./router/index.js')
 const errorMiddleware = require('./middlewares/error-middlewares')
 
-
-
 const app = express();
+
+app.use(cors(
+  {
+    origin: [""],
+    methods: ["POST","GET"],
+    credentials:true
+  }
+))
+
+mongoose.connect('mongodb+srv://referee:12345@nodejsexpressclustersss.8hkecg2.mongodb.net/test?retryWrites=true&w=majority');
+
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
@@ -19,6 +28,8 @@ app.use(cors({
 }))
 app.use('/api',router)
 app.use(errorMiddleware)
+
+
 
 const start = async() =>{
     try{
