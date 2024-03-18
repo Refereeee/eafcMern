@@ -1,0 +1,492 @@
+.root {
+  display: none;
+  justify-content: space-between;
+  background-color: #0E0E11;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  z-index: 100;
+  @media only screen and (min-width: 1200px) {
+    display: flex;
+  }
+}
+
+.imgWrapper {
+  display: flex;
+}
+
+.img {
+  width: 288px;
+  height: 111px;
+}
+
+.adaptive {
+  display: none;
+  background: rgb(5, 6, 34);
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  width: 100%;
+  @media only screen and (min-width: 320px) and (max-width: 1200px) {
+    display: flex;
+  }
+}
+
+.burgerIcon {
+  height: 32px;
+  margin-left: 16px;
+  color: rgb(255, 255, 255);
+  background: rgb(86, 79, 255);
+  border-color: rgb(86, 79, 255);
+  padding: 3px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+
+  & svg {
+    fill: rgb(255, 255, 255);
+  }
+}
+
+
+.iconProfile {
+  & svg {
+    fill: white;
+  }
+}
+
+.wrapperBurgerIcons{
+  display: flex;
+  gap: 30px;
+}
+
+.mainIconSmall {
+  display: flex;
+}
+
+.modalBurger{
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  overflow-y: scroll;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2147483100;
+  background-color: rgb(5, 6, 34);
+}
+
+.burgerMenu{
+  gap: 2px;
+  flex-direction: column;
+  display: flex;
+}
+
+.burgerMenuBlock{
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  background-color: rgba(30, 34, 66, 0.64);
+  border-color: rgba(30, 34, 66, 0.64);
+  padding: 12px;
+}
+
+.burgerMenuLink{
+  font-family: "TT Interphases", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  color: rgb(167, 167, 200);
+}
+
+
+.iconProfile {
+  margin-right: 16px;
+
+  & svg {
+    fill: white;
+  }
+}
+
+.modalHeader{
+  display: flex;
+  justify-content: space-between;
+}
+
+.authorize{
+  display: flex;
+  gap: 2rem;
+}
+
+.modalIcon{
+  padding-left: 50%;
+}
+
+.closeIcon{
+  & svg{
+    fill: rgb(167, 167, 200);
+  }
+}
+
+.navLink {
+  display: flex;
+  cursor: pointer;
+}
+
+.listLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.tabs{
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding-right: 4rem;
+}
+
+
+
+.cart{
+  position: relative;
+  padding: 10px;
+  transition-duration: .2s;
+}
+
+
+
+.cartSpan{
+  display: flex;
+  width: 1.2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--clr-primary-3);
+  color: var(--clr-white);
+  position: absolute;
+  left: 1.9rem;
+  top: -0.5rem;
+}
+
+.login{
+  border:1px solid #87879E;
+  border-radius: 5px;
+  background-color: #1E1E27;
+  padding: 10px 10px 10px 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 0.5rem;
+  transition-duration: 0.2s;
+}
+
+.login:hover{
+  background-color: #1E1E27;
+  border: 1px solid #87879E;
+  border-radius: 5px;
+}
+
+.register{
+  border: 1px solid rgb(86, 79, 255);
+  background: rgb(86, 79, 255);
+  border-radius: 5px;
+  padding: 10px 10px 10px 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  display: inline-flex;
+
+}
+
+.register:hover{
+  background-color: rgb(82, 62, 201);
+  border-color: rgb(82, 62, 201);
+}
+
+.imgLogin{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.loginName{
+  display: block;
+  text-align: center;
+}
+
+.loginOut{
+  position: absolute;
+  left: 67px;
+  top: 4px;
+}
+
+.displayNone{
+  display: none;
+}
+
+.modalCart{
+  height: calc(100vh - 116px);
+  width: 0px;
+  position: fixed;
+  top: 115px;
+  right: 0px;
+  background-color: rgb(5, 6, 34);
+  opacity: 0;
+  transition: opacity 0.2s ease 0s;
+}
+
+.modalCartOn{
+  height: calc(100vh);
+  width: 100%;
+  position: fixed;
+  top: 115px;
+  right: 0px;
+  background-color: rgb(5, 6, 34);
+  opacity: 0.84;
+  transition: opacity 0.2s ease 0s;
+  z-index: 998;
+}
+
+.cartWrapper{
+  padding-bottom: 32px;
+  padding-right: 4px;
+  width: 500px;
+  height: calc(100vh - 116px);
+  top: 115px;
+  right: 0px;
+  position: fixed;
+  background-color: rgb(30, 34, 66);
+  opacity: 0;
+}
+
+.cartWrapperTransitionOff{
+  transform: translateX(500px);
+  transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+}
+
+.cartWrapperTransitionOn{
+  transform: translateX(0px);
+  transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+}
+
+.cartWrapperOn{
+  padding-bottom: 32px;
+  padding-right: 4px;
+  width: 500px;
+  height: calc(100vh - 116px);
+  top: 115px;
+  right: 0px;
+  position: fixed;
+  background-color: rgb(30, 34, 66);
+  opacity: 1;
+  z-index: 999;
+}
+
+.cartWrapperTransitionOn{
+  transform: translateX(0px);
+  transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+}
+
+.rootCart{
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  height: 100%;
+  display: flex;
+  min-width: 0px;
+}
+
+.headerText{
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: bold;
+}
+
+.closeIcon{
+  cursor: pointer;
+}
+
+.headerWrapper{
+  margin-bottom: 24px;
+  padding: 32px 32px 0 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info{
+  flex-grow: 2;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  min-width: 0px;
+  padding-left: 32px;
+  padding-right: 32px;
+
+}
+
+.infoHead{
+  font-family: "TT Interphases", Arial, Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+  margin-bottom: 16px;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: bold;
+  justify-content: center;
+  display: flex;
+}
+
+.infoDesc{
+  font-family: "TT Interphases", Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: rgb(167, 167, 200);
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+  white-space: normal;
+  padding-bottom: 20px;
+}
+
+.main{
+  flex-grow: 2;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  min-width: 0px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.buttons{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.registerHead{
+  border: 1px solid rgb(86, 79, 255);
+  background: rgb(86, 79, 255);
+  border-radius: 5px;
+  padding: 10px 10px 10px 10px;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.registerHead:hover{
+  background-color: rgb(82, 62, 201);
+  border-color: rgb(82, 62, 201);
+}
+
+.offCart{
+  color: rgb(255, 255, 255);
+  background: rgba(86, 79, 255, 0.1);
+  border-color: rgb(86, 79, 255);
+  padding: 17px 20px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  letter-spacing: 1px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.offCart:hover{
+  background-color: rgba(86, 79, 255, 0.3);
+  border-color: rgb(82, 62, 201);
+}
+
+.cartsWrapper{
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+}
+
+
+
+.cartsItems {
+  overflow: auto;
+  height: 100%;
+}
+
+.cartsItems::-webkit-scrollbar{
+  width: 4px;
+  border-radius: 100px;
+  background-color: rgba(5, 6, 34, 0.42);
+}
+
+.cartsItems::-webkit-scrollbar-thumb{
+  border-radius: 100px;
+  background-color: rgb(86, 79, 255);
+}
+
+.shadowAbove{
+  position: absolute;
+  left: 0px;
+  z-index: 1;
+  width: 100%;
+  box-shadow: rgba(8, 13, 38, 0.75) 0px 0px 40px 40px;
+  transition: opacity 0.3s ease 0s, height 0.1s ease 0s;
+  top: 0px;
+  opacity: 1;
+}
+
+.shadowBelow{
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  z-index: 1;
+  width: 100%;
+  box-shadow: rgba(8, 13, 38, 0.75) 0px 0px 40px 40px;
+  transition: opacity 0.3s ease 0s, height 0.1s ease 0s;
+}
+
+.shadowHidden{
+  top: 0px;
+  opacity: 0;
+}
+
+//.shadowVisible{
+//  top: 0px;
+//  opacity: 1;
+//}
+
+.subTotal{
+  border-top: 1px solid rgb(41, 48, 84);
+  padding: 46px 50px 41px;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(219, 219, 233);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+  font-family: "TT Interphases", Arial, Helvetica, sans-serif;
+  white-space: normal;
+  text-decoration: unset;
+}
+
+.buttonForPayWrapper{
+  text-align: center;
+}
+
+.buttonForPay{
+  width: 80%;
+  flex-basis: 100%;
+  flex-grow: 2;
+  color: rgb(255, 255, 255);
+  background-color: rgb(86, 79, 255);
+  border-color: rgb(86, 79, 255);
+  padding: 17px 32px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+}
+

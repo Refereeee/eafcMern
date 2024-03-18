@@ -1,0 +1,109 @@
+.formWrapper{
+  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
+  flex-direction: column;
+  display: flex;
+  min-width: 0px;
+  width: 480px;
+  padding: 40px;
+}
+
+.wrapper {
+  display: flex;
+  margin: 5rem auto;
+  flex-direction: column;
+  gap: 2rem;
+  width: 300px;
+}
+
+.label {
+  flex-direction: column;
+  display: flex;
+  gap: .2rem;
+  text-align: center;
+}
+
+.labelLogin{
+  position: relative;
+}
+
+.icon{
+  position: absolute;
+  left: 16px;
+  top: 12px;
+}
+
+.iconEye{
+  position: absolute;
+  right: 16px;
+  top: 12px;
+}
+
+.input {
+  font-family: "TT Interphases", Arial, Helvetica, sans-serif;
+  padding: 16px 16px 16px 48px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+  width: 100%;
+  border: 1px solid rgb(192, 192, 214);
+  background-color: rgb(255, 255, 255);
+  color: rgb(5, 6, 34);
+  height: 44px;
+}
+
+.btn {
+  background: linear-gradient(rgb(121, 50, 255) 0%, rgb(86, 79, 255) 100%);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgb(255, 255, 255);
+  text-shadow: rgba(48, 24, 113, 0.1) 0px 1px 1px;
+  box-shadow: rgba(86, 79, 255, 0.25) 0px 6px 18px;
+  padding: 10px 16px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.btnDisabled{
+  opacity: 0.65;
+  cursor: not-allowed;
+  color: rgb(103, 107, 139);
+  background-color: rgb(41, 48, 84);
+  border-color: rgb(41, 48, 84);
+  padding: 10px 16px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.notValid {
+  border: 2px solid red;
+}
+
+.spanError {
+  color: red;
+  white-space: nowrap;
+  font-size: 1rem
+}
+
+.forErrors{
+  height: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.forErrorsPassword{
+  height: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
