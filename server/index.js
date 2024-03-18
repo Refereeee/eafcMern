@@ -16,8 +16,6 @@ app.use(cors(
   }
 ))
 
-mongoose.connect('mongodb+srv://referee:12345@nodejsexpressclustersss.8hkecg2.mongodb.net/test?retryWrites=true&w=majority');
-
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
