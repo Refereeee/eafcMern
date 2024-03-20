@@ -67,7 +67,7 @@ const Header = () => {
     if (burgerOpen || cartFlag) {
       document.body.classList.add('overflowOff');
     }
-    if (windowWidth >= 768 && !burgerOpen && !cartFlag) {
+    if ((windowWidth >= 768 || (windowWidth >= 320 && windowWidth <= 768) ) && !burgerOpen && !cartFlag) {
       document.body.classList.remove('overflowOff');
       if (burgerOpen) onBurgerOpenFlag(false);
     }

@@ -164,6 +164,9 @@
   border: none;
   cursor: pointer;
   padding: 7px;
+  @media screen and (min-width: 320px) and (max-width: 400px) {
+    display: none;
+  }
 }
 
 .subDescriptionButton:hover{
@@ -177,6 +180,7 @@
 .subDescriptionButtonLink{
   display: flex;
   justify-content: center;
+
 }
 
 .swiperDescription li::marker{

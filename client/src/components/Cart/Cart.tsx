@@ -53,7 +53,7 @@ const Cart = () => {
         !items?.length ? (
           <div className={styles.main}>
             <div className={styles.info}>
-              <div>
+              <div className={styles.infoHeadWrapper}>
                 <span className={styles.infoHead}>Your shopping cart is empty</span>
                 <span
                   className={styles.infoDesc}
