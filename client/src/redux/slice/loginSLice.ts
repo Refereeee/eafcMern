@@ -1,8 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../store';
-import getLocalStorageItems from './functions/getLocalStorageItems';
 import getCurrentUserFind, { getLoginImage } from './functions/currentUser';
 
 // export const fetchUserByImage = createAsyncThunk(
@@ -15,42 +13,34 @@ import getCurrentUserFind, { getLoginImage } from './functions/currentUser';
 // );
 
 interface CounterState {
-    buttonValue: boolean,
-    items: any,
     currentUserFind: any,
     image: any,
     headerImageFlagLogin: boolean,
     loadingImgFlag: boolean,
     loginSuccess: boolean,
-    loginFail: boolean,
     burgerOpen: boolean,
     logModal: boolean,
+    profileModal: boolean
 }
 
-const getLocalItems = getLocalStorageItems();
 const getLocalUser = getCurrentUserFind();
 const getImageLocalStorage = getLoginImage();
 
 const initialState: CounterState = {
-  buttonValue: true,
-  items: getLocalItems,
   currentUserFind: getLocalUser,
   image: getImageLocalStorage,
   headerImageFlagLogin: false,
   loadingImgFlag: false,
   loginSuccess: false,
-  loginFail: false,
   burgerOpen: false,
   logModal: false,
+  profileModal: false,
 };
 
 export const loginSlice = createSlice({
   name: 'login',
   initialState,
   reducers: {
-    changeButtonValue: (state, action: PayloadAction<boolean>) => {
-      state.buttonValue = action.payload;
-    },
     changeImageFlagTrue: (state) => {
       state.headerImageFlagLogin = true;
     },
@@ -63,14 +53,8 @@ export const loginSlice = createSlice({
     setLoginSuccessToFalse: (state) => {
       state.loginSuccess = false;
     },
-    setLoginFailToggle: (state) => {
-      state.loginFail = !state.loginFail;
-    },
     changeBurgerOpenFlag: (state, action) => {
       state.burgerOpen = action.payload;
-    },
-    refreshItems: (state) => {
-      state.items = getLocalStorageItems();
     },
     onLogModal: (state) => {
       state.logModal = true;
@@ -78,18 +62,19 @@ export const loginSlice = createSlice({
     offLogModal: (state) => {
       state.logModal = false;
     },
+    setProfileModal: (state) => {
+      state.profileModal = !state.profileModal;
+    }
   },
 });
 
 export const {
-  changeButtonValue,
   changeImageFlagTrue,
   setLoginSuccessToFalse,
   changeBurgerOpenFlag,
-  setLoginFailToggle,
   onLogModal,
   offLogModal,
-  refreshItems,
+  setProfileModal,
 } = loginSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type

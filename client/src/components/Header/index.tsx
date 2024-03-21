@@ -7,15 +7,15 @@ import { useSelector } from 'react-redux';
 import { FiLogOut } from 'react-icons/fi';
 import {
   changeBurgerOpenFlag,
-  changeImageFlagTrue, onLogModal,
+  changeImageFlagTrue,
+  onLogModal,
   selectLog,
+  setProfileModal,
 } from '../../redux/slice/loginSLice';
 import styles from './Header.module.scss';
 import logo from '../../assets/logo.png';
 import { useAppDispatch } from '../../redux/hooks';
-import {
-  BurgerIcon, CloseIcon, LittleIcon, ProfileIcon,
-} from '../../assets/home/svgs/littleIcon';
+import { BurgerIcon, CloseIcon, LittleIcon, ProfileIcon, } from '../../assets/home/svgs/littleIcon';
 import { objectForLinks } from '../../data/homeData';
 import image from '../../assets/header/user.jpg';
 import { authOptions, logout, refresh } from '../../redux/slice/authSlice';
@@ -36,6 +36,7 @@ const Header = () => {
     currentUserFind,
     burgerOpen,
     logModal,
+    profileModal
   } = useSelector(selectLog);
 
   const {
@@ -140,12 +141,30 @@ const Header = () => {
         >
           <BurgerIcon />
         </button>
-        <div className={styles.mainIconSmall}><Link to="/"><LittleIcon /></Link></div>
+        <div className={styles.mainIconSmall}><Link to="/"><LittleIcon/></Link></div>
         <div className={styles.wrapperBurgerIcons}>
-          <div className={styles.cartBurger} onClick={() => (!cartFlag ? dispatch(cartFlagToOpen()) : dispatch(cartFlagToFalse()))}>
-            <BsFillCartFill size={24} />
+          <div className={styles.cartBurger}
+               onClick={() => (!cartFlag ? dispatch(cartFlagToOpen()) : dispatch(cartFlagToFalse()))}>
+            <BsFillCartFill size={24}/>
           </div>
-          <div className={styles.iconProfile}><ProfileIcon /></div>
+          <div className={styles.iconProfile} onClick={() => dispatch(setProfileModal())}>
+            <ProfileIcon/>
+          </div>
+          <div className={profileModal ? styles.profileResponsive : styles.profileResponsiveNone}>
+            <div className={styles.profileCloseIcon} onClick={() => dispatch(setProfileModal())}>
+              <CloseIcon/>
+            </div>
+            <div className={styles.profileWindow}>
+              <div className={styles.profileInfo}>
+                <img src={image} className={styles.profileImg} alt="loginImg"/>
+                <span>Nickname</span>
+              </div>
+              <div className={styles.profileButtons}>
+                <button className={styles.profileButtonsSignIn} onClick={() => dispatch(onLogModal())} disabled={!!logModal}>Log In</button>
+                <button className={styles.profileButtonsSignUp} onClick={() => dispatch(onRegModal())} disabled={!!regModal}>Sign Up</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className={styles.root}>
@@ -156,7 +175,6 @@ const Header = () => {
         </div>
 
         <div className={styles.tabs}>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <button className="linkCart" onClick={() => (!cartFlag ? dispatch(cartFlagToOpen()) : dispatch(cartFlagToFalse()))} ref={linkCart}>
             <span className={styles.cart}>
               <BsCartFill style={{ color: 'white' }} size="2rem" />
