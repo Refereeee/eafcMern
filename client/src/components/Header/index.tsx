@@ -62,17 +62,16 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    if (image) {
-      dispatch(changeImageFlagTrue());
-    }
-    if (burgerOpen || cartFlag) {
+    if (image) dispatch(changeImageFlagTrue());
+    if (burgerOpen || cartFlag || profileModal) {
       document.body.classList.add('overflowOff');
     }
-    if ((windowWidth >= 768 || (windowWidth >= 320 && windowWidth <= 768) ) && !burgerOpen && !cartFlag) {
+    if ((windowWidth >= 768 || (windowWidth >= 320 && windowWidth <= 768)) && !burgerOpen && !cartFlag && !profileModal) {
       document.body.classList.remove('overflowOff');
-      if (burgerOpen) onBurgerOpenFlag(false);
     }
-  }, [image, burgerOpen, windowWidth, cartFlag]);
+    if (windowWidth >= 1200 && burgerOpen) onBurgerOpenFlag(false);
+    if (windowWidth >= 1200 && profileModal) dispatch(setProfileModal());
+  }, [image, burgerOpen, windowWidth, cartFlag, profileModal]);
 
   useEffect(() => {
     function handleResize() {

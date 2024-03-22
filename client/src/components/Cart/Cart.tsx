@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { FaUserPlus } from 'react-icons/fa';
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -7,10 +6,12 @@ import { cartFlagToFalse, selectCart } from '../../redux/slice/cartSlice';
 import CartClose from '../../assets/cart/cartClose';
 import { useAppDispatch } from '../../redux/hooks';
 import CartItem from '../CartItem';
+import { onRegModal, selectReg } from '../../redux/slice/registerSlice';
 
 const Cart = () => {
   const dispatch = useAppDispatch();
-  const { items, subtotal } = useSelector(selectCart);
+  const {regModal} = useSelector(selectReg);
+  const {items, subtotal} = useSelector(selectCart);
   const cartsRef = useRef<HTMLDivElement>(null);
 
   const [scrollPosition, setScrollPosition] = useState<number>(0);
@@ -19,7 +20,7 @@ const Cart = () => {
   const handleScroll = () => {
     const position = cartsRef.current?.scrollTop;
     if (cartsRef.current) {
-      const { scrollHeight, clientHeight, scrollTop } = cartsRef.current;
+      const {scrollHeight, clientHeight, scrollTop} = cartsRef.current;
       const bottom = scrollHeight - scrollTop - clientHeight;
       setBottomScrollPosition(bottom);
     }
@@ -65,10 +66,10 @@ const Cart = () => {
                   <button className={styles.offCart} onClick={() => dispatch(cartFlagToFalse())}>
                     Start shopping
                   </button>
-                  <Link to="/register" className={styles.register} onClick={() => dispatch(cartFlagToFalse())}>
-                    <h5 style={{ color: 'white' }}>Sign up</h5>
-                    <FaUserPlus color="white" size="1.5rem" />
-                  </Link>
+                  <button className={styles.register} onClick={() => dispatch(onRegModal())} disabled={!!regModal}>
+                    <h5 style={{color: 'white'}}>Sign up</h5>
+                    <FaUserPlus color="white" size="1.5rem"/>
+                  </button>
                 </div>
               </div>
             </div>

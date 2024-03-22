@@ -29,9 +29,7 @@ const Register: React.FC<ChildProps> = ({ forwardedRef }) => {
   } = useSelector(authOptions);
 
   const {
-    registerFlag,
     noticeFlag,
-    headerImageFlagReg,
   } = useSelector(selectReg);
 
   const email = useInput('', {
@@ -68,7 +66,7 @@ const Register: React.FC<ChildProps> = ({ forwardedRef }) => {
         navigate('/');
       }, 2000);
     }
-  }, [registerFlag, noticeFlag, headerImageFlagReg, isAuth, registerError]);
+  }, [ noticeFlag,  isAuth, registerError]);
 
   return (
     <form className={styles.formWrapper} ref={forwardedRef}>
