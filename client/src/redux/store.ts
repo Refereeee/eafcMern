@@ -6,6 +6,7 @@ import playoff from './slice/playoffSlice';
 import auth from './slice/authSlice';
 import cart from './slice/cartSlice';
 import finals from './slice/finalsSlice';
+import divisions from './slice/divisionsSlice';
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ export const store = configureStore({
     auth,
     cart,
     finals,
+    divisions
   },
 });
 
