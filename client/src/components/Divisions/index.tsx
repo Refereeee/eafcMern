@@ -8,18 +8,18 @@ import { useLocation } from 'react-router-dom';
 import styles from './Divisions.module.scss';
 import Sidebar from '../Sidebar';
 import { useAppDispatch } from '../../redux/hooks';
-import playoffImg from '../../assets/playoffs/fut-qualy.jpg';
+import playoffImg from '../../assets/divisions/div.png';
 import {
   changeHowWorkFlag,
   changePlatformValue,
   changeRangeValue,
   changeRequirementFlag,
   changeStreamValue,
-  selectPlayoff,
-} from '../../redux/slice/playoffSlice';
+} from '../../redux/slice/divisionsSlice';
 import platformData from '../../data/playoffData';
 import { sliceStringRange } from '../../redux/slice/functions/funcforRangeHandler';
 import { addItem, selectCart } from '../../redux/slice/cartSlice';
+import { selectDivisions } from '../../redux/slice/divisionsSlice';
 
 const Divisions = () => {
   const dispatch = useAppDispatch();
@@ -29,7 +29,7 @@ const Divisions = () => {
     platformValue,
     streamCheckboxValue,
     rangeValue,
-  } = useSelector(selectPlayoff);
+  } = useSelector(selectDivisions);
 
   const {
     items,

@@ -20,7 +20,7 @@ import { objectForLinks } from '../../data/homeData';
 import image from '../../assets/header/user.jpg';
 import { authOptions, logout, refresh } from '../../redux/slice/authSlice';
 import { cartFlagToFalse, cartFlagToOpen, selectCart } from '../../redux/slice/cartSlice';
-import Cart from '../Cart/Cart';
+import Cart from '../Cart';
 import { onRegModal, selectReg } from '../../redux/slice/registerSlice';
 
 const Header = () => {
