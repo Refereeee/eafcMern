@@ -37,7 +37,7 @@ const objectForLinks = [
     id: 6,
     img: <GiThunderball />,
     linkName: 'Squad Battles',
-    linkTo: '/squad',
+    linkTo: '/squad-battles',
   },
 ];
 

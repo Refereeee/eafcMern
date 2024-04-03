@@ -8,6 +8,9 @@ import Footer from '../Footer';
 import Finals from '../Finals';
 import Playoff from '../Playoff';
 import Modal from '../Modal';
+import SquadBattles from '../SquadBattles';
+import Tasks from '../Tasks';
+import Draft from '../Draft';
 
 const App = () => {
   return (
@@ -19,6 +22,9 @@ const App = () => {
           <Route path="/divisions" element={<Divisions />} />
           <Route path="/fut-champions-playoffs" element={<Playoff />} />
           <Route path="/fut-champions-finals" element={<Finals />} />
+          <Route path="/squad-battles" element={<SquadBattles />} />
+          <Route path="/draft" element={<Draft />} />
+          <Route path="/tasks" element={<Tasks />} />
         </Routes>
         <Footer />
       </div>

@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { Navigation, Pagination } from 'swiper';
+import 'swiper/scss/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import { BiRightArrowAlt } from 'react-icons/bi';
@@ -58,7 +59,6 @@ export const LinkSwiper = () => {
       navigation
       modules={[Pagination, Navigation]}
       className="mySwiper"
-
     >
       {
         objectLinks.map((objectLink) => (

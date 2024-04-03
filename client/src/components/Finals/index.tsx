@@ -8,20 +8,20 @@ import { useLocation } from 'react-router-dom';
 import styles from './Finals.module.scss';
 import Sidebar from '../Sidebar';
 import { useAppDispatch } from '../../redux/hooks';
-import playoffFinals from '../../assets/finals/fut-finals.jpg';
+import finalsImg from '../../assets/finals/fut-finals.jpg';
 import {
   changeHowWorkFlag,
   changePlatformValue,
   changeRangeValue,
   changeRequirementFlag,
   changeStreamValue,
-  selectFinals,
 } from '../../redux/slice/finalsSlice';
 import platformData from '../../data/playoffData';
-import { sliceStringRangeFinals } from '../../redux/slice/functions/funcforRangeHandler';
+import { sliceStringRange } from '../../redux/slice/functions/funcforRangeHandler';
 import { addItem, selectCart } from '../../redux/slice/cartSlice';
+import { selectFinals } from '../../redux/slice/finalsSlice';
 
-const Finals = () => {
+const Playoff = () => {
   const dispatch = useAppDispatch();
   const {
     requirementFlag,
@@ -50,7 +50,7 @@ const Finals = () => {
       platform: platformValue,
       streamBoolean: streamCheckboxValue,
       price: priceValueType ? priceValueWithStream : priceValue,
-      image: playoffFinals,
+      image: finalsImg,
       id: myuuid,
       text: locationName,
     }));
@@ -60,10 +60,9 @@ const Finals = () => {
     dispatch(changePlatformValue(event.target.value));
   };
   const rangeHandler = (value: string) => {
-    dispatch(changeRangeValue(+(sliceStringRangeFinals(value))));
+    dispatch(changeRangeValue(+(sliceStringRange(value))));
   };
   const checkBoxStream = () => {
-    console.log('123');
     dispatch(changeStreamValue());
   };
   const changeRequirementsValue = () => {
@@ -74,7 +73,6 @@ const Finals = () => {
   };
 
   useEffect(() => {
-    // eslint-disable-next-line no-unused-expressions
     streamCheckboxValue ? setPriceValueType(true) : setPriceValueType(false);
   }, [items, streamCheckboxValue]);
 
@@ -89,49 +87,25 @@ const Finals = () => {
         <div className={styles.wrapperContent}>
           <div className={styles.mainContent}>
             <div className={styles.titleWrapper}>
-              <h1 className={styles.title}>FUT Champions Finals Boost</h1>
+              <h1 className={styles.title}>FUT Champions Playoffs Boost</h1>
             </div>
             <div className={styles.textBlocks}>
-              <p className={styles.text}>
-                Buy Ea Sports FC FUT Champions Finals, obtain required number of wins, increase your Champions Finals rank and get a wide range of rewards.
-                FUT Champions Finals is the most difficult challenge the game can offer, a full test of your skill and abilities.
-                It is also one of the most profitable game modes in the game, and this is why we offer our FC 24 FUT Champions Finals carry service.
-              </p>
-              <p className={styles.text}>
-                FUT Champions as a gamemode is divided into two parts: Playoffs and Qualifiers,
-                that start with each new season, and Finals that have special schedule. These are the most difficult
-                gamemodes in the game. In Playoffs, you are given 10 chances to reach as many wins as possible. Each
-                victory, brings you a special reward, that becomes more and more valuable the more wins you get.
-                {' '}
-              </p>
-              <p className={styles.text}>
-                With FIFA 23 FUT Champions boost from Overgear you will be able to get up to 10
-                wins in this mode, saving your time and nerves and obtaining these rewards with ease.
-                {' '}
-              </p>
+              <p className={styles.text}>Buy Ea FC FUT Champions Playoffs and get as many wins as you want in this mode, obtaining FUT Champions points and unlocking valuable rewards.</p>
+              <p className={styles.text}>FUT Champions as a gamemode is divided into two parts: Playoffs and Qualifiers, that start with each new season, and Finals that have special schedule. These are the most difficult gamemodes in the game. In Playoffs, you are given 10 chances to reach as many wins as possible. Each victory, brings you a special reward, that becomes more and more valuable the more wins you get. </p>
+              <p className={styles.text}>With Ea FC FUT Champions boost from Overgear you will be able to get up to 10 wins in this mode, saving your time and nerves and obtaining these rewards with ease. </p>
             </div>
             <div className={styles.getBlock}>
               <h4 className={styles.getTitle}>WHAT YOU WILL GET</h4>
               <ul className={styles.getList}>
                 <li className={styles.getString}>Chosen number of wins reached;</li>
-                <li className={styles.getString}>
-                  Chance to obtain various FUT Champions rewards depending on the number
-                  of wins.
-                </li>
+                <li className={styles.getString}>Chance to obtain various FUT Champions rewards depending on the number of wins.</li>
               </ul>
             </div>
             <div className={styles.addOptionsBlock}>
               <h4 className={styles.addOptionsBlockTitle}>WHAT YOU WILL GET</h4>
               <ul className={styles.optionsList}>
-                <li className={styles.optionsParam}>
-                  1250 Division Rivals Points - in order to unlock access to the FUT
-                  Champions mode, you have to farm points in Divisions Rivals, and our players are ready to help you
-                  with that.
-                </li>
-                <li className={styles.optionsParam}>
-                  Stream - watch how our boosters complete your FIFA 23 FUT Champions
-                  Playoffs boost.
-                </li>
+                <li className={styles.optionsParam}>1250 Division Rivals Points - in order to unlock access to the FUT Champions mode, you have to farm points in Divisions Rivals, and our players are ready to help you with that. </li>
+                <li className={styles.optionsParam}>Stream - watch how our boosters complete your Ea FC FUT Champions Playoffs boost.</li>
               </ul>
             </div>
             <div className={styles.requirementsBlock} onClick={() => changeRequirementsValue()}>
@@ -144,7 +118,7 @@ const Finals = () => {
                 </div>
               </div>
               <ul className={requirementFlag ? styles.requirementsList : styles.dn}>
-                <li className={styles.listParam}>Active FIFA 23 account;</li>
+                <li className={styles.listParam}>Active Ea FC account;</li>
                 <li className={styles.listParam}>1250 Divisions Rivals points;</li>
                 <li className={styles.listParam}>
                   Team with high chemistry, meta players and 85+
@@ -179,7 +153,7 @@ const Finals = () => {
           <div className={styles.formWrapper}>
             <form className={styles.form} onSubmit={formSubmit}>
               <div className={styles.formImageBlock}>
-                <img src={playoffFinals} alt="finals" className={styles.formImage} />
+                <img src={finalsImg} alt="playoff" className={styles.formImage} />
                 <div className={styles.formImageGradient} />
               </div>
               <div className={styles.platformOptionsWrapper}>
@@ -191,9 +165,9 @@ const Finals = () => {
                   <div className={styles.selectPlatforms}>
                     {
                       platformData.map(({
-                        id,
-                        platform,
-                      }) => {
+                                          id,
+                                          platform,
+                                        }) => {
                         return (
                           <div className={styles.platformBlock}>
                             <label className={styles.platformLabel} key={id} htmlFor={platform}>
@@ -234,18 +208,8 @@ const Finals = () => {
                           onChange={checkBoxStream}
                         />
                         <div className={streamCheckboxValue ? styles.customCheckbox : styles.customCheckboxNone}>
-                          <svg
-                            width="12"
-                            height="11"
-                            viewBox="0 0 12 11"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            color="#fff"
-                          >
-                            <path
-                              d="m4.72 6.622-2.671-2.67A1.2 1.2 0 1 0 .35 5.648l4.53 4.529 6.84-8.21A1.2 1.2 0 1 0 9.879.432L4.72 6.622Z"
-                              fill="#fff"
-                            />
+                          <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg" color="#fff">
+                            <path d="m4.72 6.622-2.671-2.67A1.2 1.2 0 1 0 .35 5.648l4.53 4.529 6.84-8.21A1.2 1.2 0 1 0 9.879.432L4.72 6.622Z" fill="#fff" />
                           </svg>
                         </div>
                         <span>Stream</span>
@@ -266,7 +230,7 @@ const Finals = () => {
                           min="1"
                           max="100"
                           value={rangeValue}
-                          onChange={(e: any) => rangeHandler(e.target.value)}
+                          onChange={(e:any) => rangeHandler(e.target.value)}
                           className={styles.formInputNumber}
                         />
                       </div>
@@ -291,12 +255,13 @@ const Finals = () => {
                             height: 16,
                             position: 'absolute',
                           }}
-                          activeDotStyle={{}}
+                          activeDotStyle={{
+                          }}
                           onChange={(nextValues) => {
                             rangeHandler(String(nextValues));
                           }}
                           min={1}
-                          max={20}
+                          max={10}
                           value={rangeValue}
                           defaultValue={rangeValue}
                           step={1}
@@ -326,4 +291,4 @@ const Finals = () => {
   );
 };
 
-export default Finals;
+export default Playoff;

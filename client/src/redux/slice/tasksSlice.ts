@@ -1,8 +1,7 @@
-/* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
-export interface DivisionsState{
+export interface TasksState{
   requirementFlag:boolean,
   howWorkFlag:boolean,
   platformValue:string,
@@ -10,7 +9,7 @@ export interface DivisionsState{
   rangeValue: number,
 }
 
-const initialState: DivisionsState = {
+const initialState: TasksState = {
   requirementFlag: false,
   howWorkFlag: false,
   platformValue: 'pc',
@@ -18,8 +17,8 @@ const initialState: DivisionsState = {
   rangeValue: 1,
 };
 
-export const divisionsSlice = createSlice({
-  name: 'divisions',
+export const tasksSlice = createSlice({
+  name: 'tasks',
   initialState,
   reducers: {
     changeRequirementFlag: (state) => {
@@ -46,8 +45,8 @@ export const {
   changePlatformValue,
   changeStreamValue,
   changeRangeValue,
-} = divisionsSlice.actions;
+} = tasksSlice.actions;
 
-export const selectDivisions = (state: RootState) => state.divisions;
+export const selectTasks = (state: RootState) => state.tasks;
 
-export default divisionsSlice.reducer;
+export default tasksSlice.reducer;

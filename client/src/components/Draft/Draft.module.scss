@@ -1,0 +1,421 @@
+
+.backgroundImg{
+  background-image: linear-gradient(to right, rgba(124, 230, 100, 0.58), rgba(180, 21, 82, 0.48)), url(../../assets/home-background-3.jpg);
+  width: 100%;
+  padding: 0 0 100px 0;
+}
+
+
+
+.main{
+  display: flex;
+}
+
+
+.wrapperContent{
+  max-width: 1290px;
+  width: 100%;
+  margin: 64px auto 0;
+  display: flex;
+  @media screen and (min-width: 768px) and (max-width: 960px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+  }
+}
+
+.mainContent{
+  @media screen and (max-width: 1200px) {
+    order: 2
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .textBlocks{
+    display: none;
+  }
+}
+
+.textBlock{
+  display: block;
+}
+
+.titleWrapper{
+  margin: 20px 0;
+}
+
+.getString:before,.listParam:before,.optionsParam:before,.howParam:before{
+  display: inline-block;
+  min-width: 24px;
+  //content: counter(list-item) ".";
+  font-weight: 600;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  letter-spacing: -0.2px;
+  color: rgb(103, 107, 139);
+  font-size: 16px;
+  line-height: 24px;
+  content: url("../../assets/playoffs/ulDot.svg");
+}
+
+.requirementsList,.howWorkList{
+  max-height: 128px;
+  opacity: 1;
+  padding: 0px 16px 16px;
+  overflow: hidden;
+  transition: max-height 0.3s ease 0s, opacity 0.3s ease 0s, padding-bottom 0.3s ease 0s;
+}
+
+.requirementsBlock, .howBlock{
+  border-radius: 5px;
+  background-color: rgba(41, 48, 84, 0.5);
+  cursor: pointer;
+  margin: 16px 0
+}
+
+.dn{
+  max-height: 0px;
+  opacity: 0;
+  padding: 0px 16px;
+  overflow: hidden;
+  transition: max-height 0.3s ease 0s, opacity 0.3s ease 0s, padding-bottom 0.3s ease 0s;
+}
+
+.addOptionsBlock{
+  margin: 24px 0 0 0;
+}
+
+.streamInput {
+  border: 0px;
+  clip: rect(0px, 0px, 0px, 0px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0px;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.requirementsTitle, .howTitle {
+  padding: 16px 16px 16px 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.howSvgBlock,.requirementsSvgBlock{
+  transition: transform 0.3s ease 0s;
+}
+
+.requirementsSvgTransform, .howSvgTransform {
+  transform: translateY(-25%) rotate(180deg);
+  transition: transform 0.3s ease 0s;
+}
+
+.requirementsTitle h5, .howTitle h5{
+  text-transform: uppercase;
+}
+
+.formWrapper{
+  padding: 0 16px 0 70px;
+  margin: 0 0 0 70px;
+  @media screen and (min-width: 768px) and (max-width: 960px) {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .formWrapper{
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.formAdditionOptionsParam{
+  label {
+    display: flex;
+    align-items: center;
+  }
+  span{
+    line-height: 19px;
+    letter-spacing: -0.2px;
+    padding-right: 0px;
+    font-size: 14px;
+  }
+}
+
+.form{
+  position: sticky;
+  padding-top: 230px;
+  width: 300px;
+  border-top: 6px solid rgb(121, 50, 255);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 3px 23px;
+  @media screen and (min-width: 320px) and (max-width: 768px) {
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 100%;
+    flex: 1 0 auto;
+    position: relative;
+    background-color: rgb(8, 13, 38);
+  }
+}
+
+.formImageBlock{
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  @media screen and (min-width: 320px) and (max-width: 768px) {
+    right: -50px;
+  }
+}
+
+.formImage{
+  width: 100%;
+  display: block;
+  transform: translate(0px, -40px);
+  background: var(--clr-black);
+  @media screen and (min-width: 320px) and (max-width: 768px) {
+    background: none;
+  }
+}
+
+.formImageGradient{
+  background: linear-gradient(230.03deg, rgba(0, 0, 0, 0) 21.01%, rgba(8, 13, 38, 0.6) 71.08%, rgb(8, 13, 38) 85.08%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80%;
+  width: 100%;
+  @media screen and (min-width: 320px) and (max-width: 768px) {
+    background: linear-gradient(266.03deg, rgba(0, 0, 0, 0) 21.01%, rgba(8, 13, 38, 0.6) 71.08%, rgb(8, 13, 38) 85.08%);
+  }
+}
+
+
+.selectChapters{
+  padding: 0 24px 20px 24px;
+  z-index: 100;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #080E25;
+}
+
+.selectChaptersTitleBlock{
+  display: flex;
+  align-items: center;
+}
+
+.formAdditionTitleBlock, .formWinsTitleBlock{
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.selectChaptersTitle{
+  color: rgb(103, 107, 139);
+}
+
+.customCheckbox {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-right: 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 2px solid rgb(103, 107, 139);
+  padding: 4px 2px;
+  background-color: rgb(82, 62, 201);
+  svg{
+    display: block;
+  }
+}
+
+.customCheckboxNone{
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-right: 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 2px solid rgb(103, 107, 139);
+  padding: 4px 2px;
+  svg{
+    display: none;
+    background-color: black;
+  }
+}
+
+
+
+//.customCheckboxNone>svg{
+//
+//}
+
+.playoffTitleAfter{
+  margin-left: 12px;
+  flex: 1 1 0%;
+  height: 1px;
+  background-color: rgb(103, 107, 139);
+}
+
+.platformOptionsWrapper{
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.selectPlatforms{
+  display: flex;
+  gap: 32px;
+  @media screen and (min-width: 320px) and (max-width: 500px) {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+.platformBlock{
+  margin-right: 8px;
+  margin-top: 8px;
+}
+
+.platformRadio{
+  position: absolute;
+  height: 0;
+}
+
+.platformOption{
+  display: flex;
+  align-items: center;
+  background: rgb(82, 62, 201);
+  color: rgb(255, 255, 255);
+  border-color: transparent;
+  display: flex;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(103, 107, 139, 0.4);
+}
+
+.platformOptionNotActive{
+  background: transparent ;
+  display: flex;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: rgb(192, 192, 214);
+  border: 1px solid rgba(103, 107, 139, 0.4);
+}
+
+.platformOptionNotActive span, .platformOption span{
+  text-transform: uppercase;
+}
+
+
+.platformLabel{
+  display: block;
+  cursor: pointer;
+}
+
+.formWinsInputs{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formInputNumberWrapper{
+  position: relative;
+  color: rgb(255, 255, 255);
+  height: 44px;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-box-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgb(27, 33, 73);
+  border-color: rgba(102, 100, 165, 0.5);
+}
+
+.formInputNumberWrapper:hover{
+  border-color: rgb(148, 146, 204);
+}
+
+.formInputNumberWrapper:focus{
+  outline: 0;
+}
+
+.formInputNumber{
+  color: rgb(255, 255, 255);
+  height: 34px;
+  width: 100%;
+  position: relative;
+  border: none;
+  padding: 0px;
+  margin: 5px 16px;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1;
+  background-color: transparent;
+  font-size: 14px;
+}
+
+
+.playoffPrice{
+  margin-top: 16px;
+}
+
+.playoffPriceText{
+  color: rgb(255, 255, 255);
+  text-shadow: rgba(11, 9, 62, 0.2) 0px 1px 3px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 20px;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-style: normal;
+}
+
+.playoffButtonToCart{
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-box-pack: center;
+  justify-content: center;
+  font-size: 13px;
+  height: 44px;
+  line-height: 42px;
+  padding: 0px 20px;
+  border-width: 1px;
+  border-style: solid;
+  font-weight: 700;
+  transition: all 200ms ease-in 0s;
+  position: relative;
+  width: 100%;
+  background: linear-gradient(rgb(121, 50, 255) 0%, rgb(86, 79, 255) 100%);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgb(255, 255, 255);
+  text-shadow: rgba(48, 24, 113, 0.1) 0px 1px 1px;
+  box-shadow: rgba(86, 79, 255, 0.25) 0px 6px 18px;
+  &:hover {
+    background: linear-gradient(rgb(135, 130, 255) 0%, rgb(91, 84, 255) 100%);
+    filter: brightness(110%);
+    box-shadow: rgba(86, 79, 255, 0.5) 0px 6px 18px;
+  }
+  @media screen and (min-width: 320px) and (max-width: 500px) {
+    font-size: 10px;
+  }
+}
+

@@ -7,6 +7,9 @@ import auth from './slice/authSlice';
 import cart from './slice/cartSlice';
 import finals from './slice/finalsSlice';
 import divisions from './slice/divisionsSlice';
+import squad from './slice/squadBattlesSlice';
+import draft from './slice/draftSlice';
+import tasks from './slice/tasksSlice'
 
 export const store = configureStore({
   reducer: {
@@ -17,7 +20,10 @@ export const store = configureStore({
     auth,
     cart,
     finals,
-    divisions
+    divisions,
+    squad,
+    draft,
+    tasks
   },
 });
 
