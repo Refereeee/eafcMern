@@ -15,7 +15,7 @@ import {
   changeRangeValue,
   changeRequirementFlag,
   changeStreamValue,
-} from '../../redux/slice/squadBattlesSlice';
+} from '../../redux/slice/tasksSlice';
 import platformData from '../../data/playoffData';
 import { sliceStringRange } from '../../redux/slice/functions/funcforRangeHandler';
 import { addItem, selectCart } from '../../redux/slice/cartSlice';
