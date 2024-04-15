@@ -158,6 +158,7 @@
   border-top: 6px solid rgb(121, 50, 255);
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.03) 0px 3px 23px;
+  overflow: hidden;
   @media screen and (min-width: 320px) and (max-width: 768px) {
     padding-left: 32px;
     padding-right: 32px;

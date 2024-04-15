@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import styles from './Home.module.scss';
 import { homeOptions } from '../../redux/slice/homeSlice';
 import { ObjLinksType } from '../../types/homeDataTypes';
+import { useEffect, useState } from 'react';
 
 const MainLink = ({
   id, img, linkName, linkTo, price, firstLine, boughtLine,
@@ -49,9 +50,33 @@ export const LinkSwiper = () => {
     objectLinks,
   } = useSelector(homeOptions);
 
+  const [slidesCount, setSlidesCount] = useState(3);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(()=>{
+    if(windowWidth < 960){
+      setSlidesCount(2)
+    }
+    if(windowWidth < 600){
+      setSlidesCount(1)
+    }
+    if(windowWidth > 960){
+      setSlidesCount(3)
+    }
+  },[windowWidth,slidesCount])
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <Swiper
-      slidesPerView={3}
+      slidesPerView={slidesCount}
       spaceBetween={10}
       pagination={{
         clickable: true,
